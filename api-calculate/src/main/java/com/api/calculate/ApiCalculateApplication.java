@@ -1,13 +1,13 @@
-package com.api.rest;
+package com.api.calculate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiRestApplication {
+public class ApiCalculateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiRestApplication.class, args);
+		SpringApplication.run(ApiCalculateApplication.class, args);
 	}
 
 }
