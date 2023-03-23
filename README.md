@@ -4,13 +4,12 @@
 Este es un proyecto de una API REST en Spring Boot utilizando Java 17, con la finalidad de sumar dos números y aplicarle un porcentaje adquirido de un servicio externo, siguiendo los requerimientos establecidos.
 
 # 🌟Funcionalidades
-Servicio que recibe dos números, los suma y aplica un porcentaje adquirido de un servicio externo.
-Historial de todos los llamados a todos los endpoints junto con la respuesta en caso de haber sido exitoso.
-Responder en JSON, con data paginada.
-Límite de 3 RPM (Request / minuto) soportado.
-Guardado del historial de llamadas en una base de datos PostgreSQL.
-Inclusión de errores HTTP y mensajes adecuados para la serie 4XX.
-Tests unitarios incluidos.
+- Servicio que recibe dos números, los suma y aplica un porcentaje adquirido de un servicio externo.
+- Historial de todos los llamados a todos los endpoints junto con la respuesta en caso de haber sido exitoso.
+- Límite de 3 RPM (Request / minuto) soportado.
+- Guardado del historial de llamadas en una base de datos PostgreSQL.
+- Inclusión de errores HTTP y mensajes adecuados para la serie 4XX.
+- Tests unitarios incluidos.
 # 🚀Tecnologías utilizadas
 - Spring Cloud Gateway
 - Spring Data JPA
