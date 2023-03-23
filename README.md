@@ -34,5 +34,9 @@ docker build -t apiexterna .
 docker build -t eureka .
 docker build -t gateway . 
 ```
-- Luego de haber generado las imágenes, correr el comando docker-compose up -d, ubicándose sobre el directorio donde se encuentra el archivo docker-compose.yml.
+- Luego de haber generado las imágenes, correr el comando: 
+```docker
+docker-compose up -d
+```
+ubicándose sobre el directorio donde se encuentra el archivo docker-compose.yml.
 Una vez estén corriendo las imágenes, se podrá probar desde Postman, con la colección "Challenge BE.postman_collection.json" provista.
