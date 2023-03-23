@@ -1,0 +1,60 @@
+version: '3.8'
+services:
+  eureka-server:
+    image: eureka #nombre de la imagen que hemos creado
+    restart: always
+    container_name: eureka
+    ports:
+      - '8761:8761'
+    networks:
+      - 'dockernetflix-network'
+  gateway-service:
+    image: gateway #nombre de la imagen que hemos creado
+    restart: always
+    container_name: gateway
+    ports:
+      - '7000:7000'
+    networks:
+      - 'dockernetflix-network'
+  api-externa:
+    image: apiexterna #nombre de la imagen que hemos creado
+    restart: always
+    container_name: apiexterna
+    networks:
+      - 'dockernetflix-network'
+  api-calculate:
+    image: apicalculate #nombre de la imagen que hemos creado
+    restart: always
+    container_name: api-calculate
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -h db"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+    networks:
+      - 'dockernetflix-network'
+  db:
+    image: postgres:15-alpine
+    restart: always
+    container_name: db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - 'dockernetflix-network'
+networks:
+  dockernetflix-network:
+volumes:
+  postgres-data:

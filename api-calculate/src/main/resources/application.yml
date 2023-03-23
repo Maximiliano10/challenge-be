@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: api-calculate
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+  doc:
+    packagesToScan: com.api.calculate.model.entity, com.api.calculate.controller
+    pathsToMatch: /**
+server:
+  port: 8002
+# Config de el servidor
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka

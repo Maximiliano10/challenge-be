@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "f2086212-6941-48da-a3c5-0a95c49f2f33",
+		"name": "Challenge BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25255176"
+	},
+	"item": [
+		{
+			"name": "http://localhost:7000/api-calculate/getProcessCalculate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/getProcessCalculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"getProcessCalculate"
+					]
+				},
+				"description": "Service to calculate 2 numbers with percentage"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7000/api-calculate/getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7000/api/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7000",
+					"path": [
+						"api",
+						"getAll"
+					]
+				},
+				"description": "Service to get a record of logs"
+			},
+			"response": []
+		}
+	]
+}
